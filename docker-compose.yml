@@ -1,0 +1,21 @@
+version: '3.9'
+
+services:
+  app:
+    image: 'louislam/uptime-kuma:1.21.2-alpine'
+    container_name: uptime-kuma-app
+    #ports:
+    #  - 3001:3001
+    volumes:
+      - '$(pwd)/data:/app/data'
+    networks:
+      - uptime-kuma-net
+    restart: unless-stopped
+
+networks:
+  uptime-kuma-net:
+    name: 'uptime-kuma-net'
+    ipam:
+      driver: default
+      config:
+        - subnet: '172.18.0.0/28'
