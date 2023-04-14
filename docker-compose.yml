@@ -11,6 +11,12 @@ services:
     networks:
       - uptime-kuma-net
     restart: unless-stopped
+    healthcheck:
+      test: ['CMD', 'node', 'extra/healthcheck.js']
+      interval: 1m30s
+      timeout: 30s
+      retries: 3
+      start_period: 10s
 
 networks:
   uptime-kuma-net:
