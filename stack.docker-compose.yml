@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  app:
+    image: 'louislam/uptime-kuma:1.21.3-alpine'
+    container_name: uptime-kuma-app
+    #ports:
+    #  - 3001:3001
+    volumes:
+      - '$(pwd)/data:/app/data'
+    networks:
+      - uptime-kuma-net
+      - my-reverse-proxy
+    healthcheck:
+      test: ['CMD', 'node', 'extra/healthcheck.js']
+      interval: 1m30s
+      timeout: 30s
+      retries: 3
+      start_period: 10s
+
+    deploy:
+      mode: global
+      restart_policy:
+        condition: on-failure
+        delay: 10s 
+        max_attempts: 3
+        window: 30s
+
+networks:
+  uptime-kuma-net:
+    name: 'uptime-kuma-net'
+    ipam:
+      driver: default
+      config:
+        - subnet: '172.18.0.0/28'
+
+  # Reverse Proxy
+  my-reverse-proxy:
+    name: 'my-reverse-proxy'
+    external: true
+
