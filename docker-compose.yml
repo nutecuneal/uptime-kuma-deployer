@@ -7,7 +7,7 @@ services:
     #ports:
     #  - 3001:3001
     volumes:
-      - '$(pwd)/data:/app/data'
+      - $(pwd)/lib_upkdata:/app/data
     networks:
       - uptime-kuma-net
     restart: unless-stopped

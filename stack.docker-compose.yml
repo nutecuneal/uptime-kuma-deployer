@@ -7,10 +7,10 @@ services:
     #ports:
     #  - 3001:3001
     volumes:
-      - '$(pwd)/data:/app/data'
+      - $(pwd)/lib_upkdata:/app/data
     networks:
       - uptime-kuma-net
-      - my-reverse-proxy
+      - reverse-proxy
     healthcheck:
       test: ['CMD', 'node', 'extra/healthcheck.js']
       interval: 1m30s
@@ -35,7 +35,7 @@ networks:
         - subnet: '172.18.0.0/28'
 
   # Reverse Proxy
-  my-reverse-proxy:
-    name: 'my-reverse-proxy'
+  reverse-proxy:
+    name: 'reverse-proxy'
     external: true
 
