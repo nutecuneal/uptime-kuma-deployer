@@ -1,13 +1,13 @@
-# Uptime-kuma Deployer
+# Uptime Kuma Deployer
 
-O [Uptime Kuma](https://uptime.kuma.pet) é uma ferramenta de monitoramento projetada para ser uma maneira fácil de monitorar dispositivos, sites, DNS, etc.
+O [Uptime Kuma](https://uptime.kuma.pet) é uma ferramenta de monitoramento projetada para ser uma maneira fácil de monitorar HTTP(s), TCP, HTTP(s) Keyword, Ping, DNS Record, Push, Steam Game Server e Containers Docker.
 
 ## Sumário
 
-- [Uptime-kuma Deployer](#uptime-kuma-deployer)
+- [Uptime Kuma Deployer](#uptime-kuma-deployer)
   - [Sumário](#sumário)
   - [Requisitos e Dependências](#requisitos-e-dependências)
-  - [Instação](#instação)
+  - [Instalação](#instalação)
     - [Diretórios](#diretórios)
     - [Docker-Compose](#docker-compose)
       - [Portas](#portas)
@@ -19,7 +19,7 @@ O [Uptime Kuma](https://uptime.kuma.pet) é uma ferramenta de monitoramento proj
 
 - [Docker e Docker-Compose](https://docs.docker.com/)
 
-## Instação
+## Instalação
 
 ### Diretórios
 
