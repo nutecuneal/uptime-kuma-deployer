@@ -2,14 +2,14 @@ version: '3.8'
 
 services:
   app:
-    image: 'louislam/uptime-kuma:1.21.3-alpine'
+    image: louislam/uptime-kuma:1.22.1-alpine
     container_name: uptime-kuma-app
     #ports:
     #  - 3001:3001
     volumes:
       - $(pwd)/lib_upkdata:/app/data
     networks:
-      - uptime-kuma-net
+      - uptimekuma-net
     restart: unless-stopped
     healthcheck:
       test: ['CMD', 'node', 'extra/healthcheck.js']
@@ -19,9 +19,9 @@ services:
       start_period: 10s
 
 networks:
-  uptime-kuma-net:
-    name: 'uptime-kuma-net'
+  uptimekuma-net:
+    name: uptimekuma-net
     ipam:
       driver: default
       config:
-        - subnet: '172.18.0.0/28'
+        - subnet: 172.18.0.0/28

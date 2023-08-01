@@ -6,8 +6,8 @@ O [Uptime Kuma](https://uptime.kuma.pet) é uma ferramenta de monitoramento proj
 
 - [Uptime Kuma Deployer](#uptime-kuma-deployer)
   - [Sumário](#sumário)
-  - [Requisitos e Dependências](#requisitos-e-dependências)
-  - [Instalação](#instalação)
+  - [1. Requisitos e Dependências](#1-requisitos-e-dependências)
+  - [2. Instalação](#2-instalação)
     - [Diretórios](#diretórios)
     - [Docker-Compose](#docker-compose)
       - [Portas](#portas)
@@ -15,11 +15,11 @@ O [Uptime Kuma](https://uptime.kuma.pet) é uma ferramenta de monitoramento proj
       - [Rede](#rede)
         - [Proxy Reverso](#proxy-reverso)
 
-## Requisitos e Dependências
+## 1. Requisitos e Dependências
 
 - [Docker e Docker-Compose](https://docs.docker.com/)
 
-## Instalação
+## 2. Instalação
 
 ### Diretórios
 
@@ -29,9 +29,6 @@ O [Uptime Kuma](https://uptime.kuma.pet) é uma ferramenta de monitoramento proj
 # Dir. Data
 $ mkdir $(pwd)/data
 ```
-
-Sugestão (no Linux):
-- Dir. Data: */var/lib/uptime-kuma*
 
 ### Docker-Compose
 
